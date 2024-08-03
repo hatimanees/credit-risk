@@ -1,0 +1,65 @@
+[2024-08-01 23:22:54,350] 187 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.4.198.0:5000
+[2024-08-01 23:22:54,350] 187 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2024-08-01 23:23:03,293] 187 werkzeug - INFO - 127.0.0.1 - - [01/Aug/2024 23:23:03] "GET /predictdata HTTP/1.1" 200 -
+[2024-08-01 23:24:26,619] 1744 app - ERROR - Exception on /predictdata [POST]
+Traceback (most recent call last):
+  File "F:\superstore_ml\src\pipeline\predict_pipeline.py", line 19, in predict
+    data_scaled = preprocessor.transform(features)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\New folder\Lib\site-packages\sklearn\pipeline.py", line 696, in transform
+    Xt = transform.transform(Xt)
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\New folder\Lib\site-packages\sklearn\utils\_set_output.py", line 157, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\superstore_ml\src\utlis.py", line 79, in transform
+    df['month'] = df['Dt_Customer'].str.split('/').str[0].astype(int)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\New folder\Lib\site-packages\pandas\core\generic.py", line 6534, in astype
+    new_data = self._mgr.astype(dtype=dtype, copy=copy, errors=errors)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\New folder\Lib\site-packages\pandas\core\internals\managers.py", line 414, in astype
+    return self.apply(
+           ^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\New folder\Lib\site-packages\pandas\core\internals\managers.py", line 354, in apply
+    applied = getattr(b, f)(**kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\New folder\Lib\site-packages\pandas\core\internals\blocks.py", line 616, in astype
+    new_values = astype_array_safe(values, dtype, copy=copy, errors=errors)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\New folder\Lib\site-packages\pandas\core\dtypes\astype.py", line 238, in astype_array_safe
+    new_values = astype_array(values, dtype, copy=copy)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\New folder\Lib\site-packages\pandas\core\dtypes\astype.py", line 183, in astype_array
+    values = _astype_nansafe(values, dtype, copy=copy)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\New folder\Lib\site-packages\pandas\core\dtypes\astype.py", line 134, in _astype_nansafe
+    return arr.astype(dtype, copy=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '1980-03-06'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\OneDrive\Desktop\New folder\Lib\site-packages\flask\app.py", line 2529, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\New folder\Lib\site-packages\flask\app.py", line 1825, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\New folder\Lib\site-packages\flask\app.py", line 1823, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\OneDrive\Desktop\New folder\Lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\superstore_ml\app.py", line 54, in predict_datapoint
+    results = predict_pipeline.predict(pred_df)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\superstore_ml\src\pipeline\predict_pipeline.py", line 24, in predict
+    raise CustomException(e, sys)
+src.exception.CustomException: Error occured in python script name [F:\superstore_ml\src\pipeline\predict_pipeline.py] line number [19] error message[invalid literal for int() with base 10: '1980-03-06']
+[2024-08-01 23:24:26,913] 187 werkzeug - INFO - 127.0.0.1 - - [01/Aug/2024 23:24:26] "[35m[1mPOST /predictdata HTTP/1.1[0m" 500 -

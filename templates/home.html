@@ -1,0 +1,118 @@
+<html>
+<body>
+    <div class="login">
+       <h1>Get probability of customer response as Yes</h1>
+    </div>
+    <form action="{{ url_for('predict_datapoint')}}" method="post">
+    <div class="mb-3">
+        <label class="form-label">Year of Birth</label>
+        <input class="form-control" type="number" name="Year_Birth" placeholder="Enter your Year of Birth" required />
+    </div>
+    <div class="mb-3">
+    <label class="form-label" for="Dt_Customer">Dt_Customer</label>
+    <input class="form-control" type="text" id="Dt_Customer" name="Dt_Customer" placeholder="MM/DD/YYYY" pattern="\d{2}/\d{2}/\d{4}" required />
+</div>
+
+    <div class="mb-3">
+    <label class="form-label">Education</label>
+    <select class="form-control" name="Education" required>
+        <option selected disabled value="">Select Education</option>
+        <option value="PhD">PhD</option>
+        <option value="Graduation">Graduation</option>
+        <option value="2n Cycle">2nd Cycle</option>
+        <option value="Master">Master</option>
+        <option value="Basic">Basic</option>
+    </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Income</label>
+        <input class="form-control" type="number" step="0.01" name="Income" placeholder="Enter your Income" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Number of Kids at Home</label>
+        <input class="form-control" type="number" name="Kidhome" placeholder="Enter number of kids at home" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Number of Teens at Home</label>
+        <input class="form-control" type="number" name="Teenhome" placeholder="Enter number of teens at home" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Recency (days since last purchase)</label>
+        <input class="form-control" type="number" name="Recency" placeholder="Enter recency" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Amount Spent on Wines</label>
+        <input class="form-control" type="number" step="0.01" name="MntWines" placeholder="Enter amount spent on wines" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Amount Spent on Fruits</label>
+        <input class="form-control" type="number" step="0.01" name="MntFruits" placeholder="Enter amount spent on fruits" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Amount Spent on Meat Products</label>
+        <input class="form-control" type="number" step="0.01" name="MntMeatProducts" placeholder="Enter amount spent on meat products" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Amount Spent on Fish Products</label>
+        <input class="form-control" type="number" step="0.01" name="MntFishProducts" placeholder="Enter amount spent on fish products" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Amount Spent on Sweet Products</label>
+        <input class="form-control" type="number" step="0.01" name="MntSweetProducts" placeholder="Enter amount spent on sweet products" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Amount Spent on Gold Products</label>
+        <input class="form-control" type="number" step="0.01" name="MntGoldProds" placeholder="Enter amount spent on gold products" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Number of Deals Purchases</label>
+        <input class="form-control" type="number" name="NumDealsPurchases" placeholder="Enter number of deals purchases" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Number of Web Purchases</label>
+        <input class="form-control" type="number" name="NumWebPurchases" placeholder="Enter number of web purchases" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Number of Catalog Purchases</label>
+        <input class="form-control" type="number" name="NumCatalogPurchases" placeholder="Enter number of catalog purchases" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Number of Store Purchases</label>
+        <input class="form-control" type="number" name="NumStorePurchases" placeholder="Enter number of store purchases" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Number of Web Visits per Month</label>
+        <input class="form-control" type="number" name="NumWebVisitsMonth" placeholder="Enter number of web visits per month" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Complain</label>
+        <select class="form-control" name="Complain" required>
+            <option class="placeholder" selected disabled value="">Select Complain</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Marital Status</label>
+        <select class="form-control" name="Marital_Status" required>
+            <option class="placeholder" selected disabled value="">Select Marital Status</option>
+            <option value="Divorced">Divorced</option>
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+            <option value="Together">Together</option>
+            <option value="Widow">Widow</option>
+            <option value="YOLO">YOLO</option>
+            <option value="Alone">Alone</option>
+            <option value="Absurd">Absurd</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <input class="btn btn-primary" type="submit" value="Submit" required />
+    </div>
+ </form>
+
+    <h2>
+       THE  prediction is {{results}}
+    </h2>
+   </body>
+ </html>

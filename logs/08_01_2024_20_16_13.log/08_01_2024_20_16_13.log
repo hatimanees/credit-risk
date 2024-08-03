@@ -1,0 +1,10 @@
+[2024-08-01 20:16:16,108] 23 root - INFO - Entered the data ingestion method or component
+[2024-08-01 20:16:16,117] 26 root - INFO - Read the dataset as dataframe
+[2024-08-01 20:16:16,117] 28 root - INFO - Creating feature and mapping values
+[2024-08-01 20:16:16,127] 33 root - INFO - Train test split initiated
+[2024-08-01 20:16:16,137] 39 root - INFO - Ingestion of the data is completed
+[2024-08-01 20:16:16,179] 80 root - INFO - Read train and test data completed
+[2024-08-01 20:16:16,179] 82 root - INFO - obtaining preprocessing object
+[2024-08-01 20:16:16,180] 52 root - INFO - Categorical columns: ['Marital_Status']
+[2024-08-01 20:16:16,180] 53 root - INFO - Numerical columns: ['Year_Birth', 'Education', 'Income', 'Kidhome', 'Teenhome', 'MntWines', 'MntMeatProducts', 'NumStorePurchases', 'NumWebVisitsMonth', 'Complain', 'month', 'date', 'year', 'Recency', 'MntFruits', 'MntFishProducts', 'MntSweetProducts', 'MntGoldProds', 'NumDealsPurchases', 'NumWebPurchases', 'NumCatalogPurchases']
+[2024-08-01 20:16:16,182] 94 root - INFO - Applying preprocessing object on training dataframe and testing dataframe
