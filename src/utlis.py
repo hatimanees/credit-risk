@@ -1,13 +1,14 @@
 import os
 import sys
 import pickle
-import numpy as np
-import pandas as pd
-import dill
-from sklearn.metrics import r2_score
 from src.exception import CustomException
-from sklearn.model_selection import GridSearchCV
 from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+from sklearn.model_selection import train_test_split
+from imblearn.over_sampling import SMOTE
+from collections import Counter
+import pandas as pd
+
 def save_object(file_path, obj):
     try:
         dir_path = os.path.dirname(file_path)
@@ -16,37 +17,6 @@ def save_object(file_path, obj):
 
         with open(file_path, "wb") as file_obj:
             pickle.dump(obj, file_obj)
-
-    except Exception as e:
-        raise CustomException(e, sys)
-
-def evaluate_models(X_train,y_train,X_test,y_test,models,param):
-    try:
-        report={}
-
-        for i in range(len(list(models))):
-            model = list(models.values())[i]
-            para = param[list(models.keys())[i]]
-
-            gs = GridSearchCV(model, para, cv=3)
-            gs.fit(X_train, y_train)
-
-            model.set_params(**gs.best_params_)
-            model.fit(X_train, y_train)
-
-            # model.fit(X_train, y_train)  # Train model
-
-            y_train_pred = model.predict(X_train)
-
-            y_test_pred = model.predict(X_test)
-
-            train_model_score = r2_score(y_train, y_train_pred)
-
-            test_model_score = r2_score(y_test, y_test_pred)
-
-            report[list(models.keys())[i]] = test_model_score
-
-        return report
 
     except Exception as e:
         raise CustomException(e, sys)
@@ -62,54 +32,78 @@ def load_object(file_path):
 
 
 
-
-
 class CustomTransformer(BaseEstimator, TransformerMixin):
     def __init__(self):
-        print(" ")
+        self.scaler = StandardScaler()
+        self.label_encoder = LabelEncoder()
+        self.columns_to_scale = None  # To store the columns for scaling
+        self.ohe_columns = None  # To store the one-hot encoded columns
 
     def fit(self, X, y=None):
-        # No fitting needed for this transformer
+        df = X.copy()
+
+        # Impute loan_int_rate with the median
+        df['loan_int_rate'] = df['loan_int_rate'].fillna(df['loan_int_rate'].median())
+
+        # Drop rows with missing person_emp_length
+        df.dropna(subset=['person_emp_length'], inplace=True)
+
+        # One-hot encoding for 'person_home_ownership' and 'loan_intent'
+        df = pd.get_dummies(df, columns=['person_home_ownership', 'loan_intent'], drop_first=True)
+        self.ohe_columns = df.columns  # Save the columns after encoding
+
+        # Fit label encoder on 'cb_person_default_on_file'
+        df['cb_person_default_on_file'] = self.label_encoder.fit_transform(df['cb_person_default_on_file'])
+
+        # Separate features and target
+        self.columns_to_scale = df.drop(['loan_status'], axis=1).columns
+
+        # Fit the scaler
+        self.scaler.fit(df[self.columns_to_scale])
+
         return self
 
     def transform(self, X, y=None):
         df = X.copy()
 
-        # Apply custom transformations
-        df['month'] = df['Dt_Customer'].str.split('/').str[0].astype(int)
-        df['date'] = df['Dt_Customer'].str.split('/').str[1].astype(int)
-        df['year'] = df['Dt_Customer'].str.split('/').str[2].astype(int)
+        # Impute loan_int_rate with the median
+        df['loan_int_rate'] = df['loan_int_rate'].fillna(df['loan_int_rate'].median())
 
-        education_mapping = {'Basic': 0, 'Graduation': 1, '2n Cycle': 3, 'Master': 4, 'PhD': 5}
-        df['Education'] = df['Education'].map(education_mapping)
+        # Drop rows where person_emp_length is NaN
+        df = df.dropna(subset=['person_emp_length']).reset_index(drop=True)
 
-        df = df.dropna(subset=['Income'])
+        # One-hot encoding for 'person_home_ownership' and 'loan_intent'
+        df = pd.get_dummies(df, columns=['person_home_ownership', 'loan_intent'], drop_first=True)
 
-        # Ensure the column names are preserved
-        return df
+        # Align the columns of one-hot encoded data with the training data
+        df = df.reindex(columns=self.ohe_columns, fill_value=0)
 
+        # Label encoding for 'cb_person_default_on_file'
+        df['cb_person_default_on_file'] = self.label_encoder.transform(df['cb_person_default_on_file'])
 
-class LogTransformer(BaseEstimator, TransformerMixin):
-    def __init__(self, columns=None):
-        self.columns = columns
+        # Extract independent features (X)
+        X = df.drop(['loan_status'], axis=1) if 'loan_status' in df.columns else df
 
-    def fit(self, X, y=None):
-        # No fitting needed for this transformer
-        return self
+        # Standard scaling
+        X = self.scaler.transform(X)
 
-    def transform(self, X):
-        # Ensure X is a DataFrame
-        if not isinstance(X, pd.DataFrame):
-            raise ValueError("LogTransformer requires X to be a pandas DataFrame")
+        # Only perform train_test_split and SMOTE during training (when y is provided)
+        if y is not None and len(df) > 1:  # Ensure there's more than one sample
+            # Align indices between df and y
+            y = y.loc[df.index].reset_index(drop=True)
+            y = df['loan_status'].reset_index(drop=True) if 'loan_status' in df.columns else y
 
-        df = X.copy()
+            # Split into training and test sets
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
 
-        # Apply log transformation to the specified columns
-        for column in self.columns:
-            if column in df.columns:
-                # Apply log transformation with a small constant to avoid log(0)
-                df[column] = np.log1p(df[column])
-            else:
-                raise ValueError(f"Column {column} not found in the DataFrame")
+            # Apply SMOTE for oversampling the minority class
+            smote = SMOTE()
+            X_train, y_train = smote.fit_resample(X_train, y_train)
 
-        return df
+            return X_train, y_train, X_test, y_test
+        else:
+            return X  # For prediction, return only the transformed features
+
+    def fit_transform(self, X, y=None):
+        return self.fit(X, y).transform(X, y)
+

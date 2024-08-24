@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d89c87d5-e67b-4710-ad36-935564579d39" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/credit risk.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/superstore_ml.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifacts/data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifacts/model.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifacts/preprocessor.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifacts/test.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/artifacts/train.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catboost_info/catboost_training.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catboost_info/learn/events.out.tfevents" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catboost_info/learn_error.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catboost_info/time_left.tsv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_01_2024_19_39_45.log/08_01_2024_19_39_45.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_01_2024_20_03_02.log/08_01_2024_20_03_02.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_01_2024_20_09_38.log/08_01_2024_20_09_38.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_01_2024_20_16_13.log/08_01_2024_20_16_13.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_01_2024_20_16_21.log/08_01_2024_20_16_21.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_01_2024_20_24_20.log/08_01_2024_20_24_20.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_01_2024_20_30_38.log/08_01_2024_20_30_38.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_01_2024_23_13_43.log/08_01_2024_23_13_43.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_01_2024_23_15_50.log/08_01_2024_23_15_50.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_01_2024_23_17_01.log/08_01_2024_23_17_01.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_01_2024_23_18_49.log/08_01_2024_23_18_49.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_01_2024_23_21_27.log/08_01_2024_23_21_27.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_01_2024_23_22_54.log/08_01_2024_23_22_54.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_01_2024_23_28_50.log/08_01_2024_23_28_50.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_02_2024_17_36_05.log/08_02_2024_17_36_05.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_16_40_45.log/08_03_2024_16_40_45.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_16_41_00.log/08_03_2024_16_41_00.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_16_48_35.log/08_03_2024_16_48_35.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_16_48_50.log/08_03_2024_16_48_50.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_17_06_37.log/08_03_2024_17_06_37.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_17_11_47.log/08_03_2024_17_11_47.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_17_11_55.log/08_03_2024_17_11_55.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_17_16_53.log/08_03_2024_17_16_53.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_17_22_40.log/08_03_2024_17_22_40.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_17_22_48.log/08_03_2024_17_22_48.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_17_22_53.log/08_03_2024_17_22_53.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_17_22_58.log/08_03_2024_17_22_58.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_17_39_21.log/08_03_2024_17_39_21.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_17_39_34.log/08_03_2024_17_39_34.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_17_40_15.log/08_03_2024_17_40_15.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/08_03_2024_17_58_19.log/08_03_2024_17_58_19.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_ml_project.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/my_ml_project.egg-info/PKG-INFO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_ml_project.egg-info/requires.txt" beforeDir="false" afterPath="$PROJECT_DIR$/my_ml_project.egg-info/requires.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebook/data/superstore_data.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebook/superstore_EDA.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebook/superstore_featureengineering.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebook/superstoremodel.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/data_ingestion.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/data_ingestion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/data_transformation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/data_transformation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/model_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/model_trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pipeline/predict_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pipeline/predict_pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utlis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utlis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/conda-meta/history" beforeDir="false" afterPath="$PROJECT_DIR$/venv/conda-meta/history" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/etc/aau_token" beforeDir="false" afterPath="$PROJECT_DIR$/venv/etc/aau_token" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2l0SAWdUxPIwNp3ZwpdEtbHwzle" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "F:/alumni_database",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="RunManager" selected="Python.app">
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="credit risk" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="credit risk" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.app" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d89c87d5-e67b-4710-ad36-935564579d39" name="Changes" comment="" />
+      <created>1724315357367</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1724315357367</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="python-exception">
+          <properties notifyOnlyOnFirst="true" notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+            <option name="notifyOnlyOnFirst" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

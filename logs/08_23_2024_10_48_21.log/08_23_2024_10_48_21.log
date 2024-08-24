@@ -1,0 +1,11 @@
+[2024-08-23 10:48:22,547] 187 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.4.198.189:5000
+[2024-08-23 10:48:22,547] 187 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2024-08-23 10:48:28,538] 187 werkzeug - INFO - 127.0.0.1 - - [23/Aug/2024 10:48:28] "GET /predictdata HTTP/1.1" 200 -
+[2024-08-23 10:48:46,404] 187 werkzeug - INFO - 127.0.0.1 - - [23/Aug/2024 10:48:46] "POST /predictdata HTTP/1.1" 200 -
+[2024-08-23 10:49:29,976] 187 werkzeug - INFO - 127.0.0.1 - - [23/Aug/2024 10:49:29] "POST /predictdata HTTP/1.1" 200 -
+[2024-08-23 10:50:16,884] 187 werkzeug - INFO - 127.0.0.1 - - [23/Aug/2024 10:50:16] "POST /predictdata HTTP/1.1" 200 -
+[2024-08-23 10:50:22,514] 187 werkzeug - INFO - 127.0.0.1 - - [23/Aug/2024 10:50:22] "GET /predictdata HTTP/1.1" 200 -
+[2024-08-23 10:51:08,314] 187 werkzeug - INFO - 127.0.0.1 - - [23/Aug/2024 10:51:08] "POST /predictdata HTTP/1.1" 200 -

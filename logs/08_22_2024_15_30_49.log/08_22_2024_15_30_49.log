@@ -1,0 +1,11 @@
+[2024-08-22 15:30:50,560] 23 root - INFO - Entered the data ingestion method or component
+[2024-08-22 15:30:50,589] 26 root - INFO - Read the dataset as dataframe
+[2024-08-22 15:30:50,589] 28 root - INFO - Creating feature and mapping values
+[2024-08-22 15:30:50,668] 33 root - INFO - Train test split initiated
+[2024-08-22 15:30:50,754] 39 root - INFO - Ingestion of the data is completed
+[2024-08-22 15:30:50,789] 41 root - INFO - Read train and test data completed
+[2024-08-22 15:30:50,789] 43 root - INFO - obtaining preprocessing object
+[2024-08-22 15:30:50,790] 47 root - INFO - Applying preprocessing object on training dataframe and testing dataframe
+[2024-08-22 15:30:51,065] 59 root - INFO - saved preprocessing object
+[2024-08-22 15:30:51,068] 20 root - INFO - Split training and test input data
+[2024-08-22 15:31:00,224] 36 root - INFO - Best found model on both training and testing dataset

@@ -1,0 +1,4 @@
+[2024-08-22 15:29:59,876] 23 root - INFO - Entered the data ingestion method or component
+[2024-08-22 15:29:59,903] 26 root - INFO - Read the dataset as dataframe
+[2024-08-22 15:29:59,903] 28 root - INFO - Creating feature and mapping values
+[2024-08-22 15:29:59,983] 33 root - INFO - Ingestion of the data is completed
